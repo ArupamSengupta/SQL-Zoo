@@ -17,3 +17,11 @@ SELECT * FROM nobel
     'Thomas Woodrow Wilson',
     'Jimmy Carter',
     'Barack Obama')
+
+SELECT winner FROM nobel
+    WHERE winner like 'John%'
+
+(SELECT yr,subject,winner FROM nobel
+    WHERE (subject='Physics' AND yr=1980)) UNION
+(SELECT yr,subject,winner FROM nobel
+    WHERE (subject='Chemistry' AND yr=1984))
